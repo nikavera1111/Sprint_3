@@ -63,7 +63,7 @@ class OnlineSalesRegisterCollector:
                 twenty_percent_tax.append(item)
                 total.append(self.item_price.get(item))
         total_tax = sum(total) * 0.2
-        if len(twenty_percent_tax) > 10:
+        if len(self.name_items) > 10:
             total_tax = total_tax * 0.9
         return total_tax
         
@@ -76,7 +76,7 @@ class OnlineSalesRegisterCollector:
                 ten_percent_tax.append(item)
                 total.append(self.item_price.get(item))
         total_tax = sum(total) * 0.1
-        if len(ten_percent_tax) > 10:
+        if len(self.name_items) > 10:
             total_tax = total_tax * 0.9
         return total_tax
     
@@ -91,6 +91,7 @@ class OnlineSalesRegisterCollector:
             int(telephone_number)
         except Exception:
             raise ValueError ('Необходимо ввести цифры')
-        if len(telephone_number) != 10:
+        if len(telephone_number) > 10:
                 raise ValueError ('Необходимо ввести 10 цифр после "+7"')
         return f'+7{telephone_number}'
+    
