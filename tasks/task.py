@@ -94,23 +94,3 @@ class OnlineSalesRegisterCollector:
         if len(telephone_number) != 10:
                 raise ValueError ('Необходимо ввести 10 цифр после "+7"')
         return f'+7{telephone_number}'
-        
-
-                
-
-tets = OnlineSalesRegisterCollector()
-# tets.add_item_to_cheque('кола')
-# tets.add_item_to_cheque('чипсы')
-# tets.add_item_to_cheque('молоко')
-# tets.add_item_to_cheque('кола')
-# tets.add_item_to_cheque('кефир')
-# tets.add_item_to_cheque('молоко')
-print(tets.name_items)
-#tets.delete_item_from_check('кола')
-print(tets.name_items)
-print(tets.check_amount())
-print(tets.twenty_percent_tax_calculation())
-print(tets.ten_percent_tax_calculation())
-print(tets.total_tax())
-print(OnlineSalesRegisterCollector.get_telephone_number(1234567891))
-
